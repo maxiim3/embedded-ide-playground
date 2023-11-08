@@ -19,8 +19,12 @@ export const flexStack = cva('flex w-[100%]', {
    },
 });
 
+type FlexProps = {direction?: 'column' | 'row'; wrap?: boolean }
+type DivProps = ComponentPropsWithoutRef<'div'> 
+type ComponentProps = DivProps & FlexProps
+    
 export const FlexStack = (
-   props: ComponentPropsWithoutRef<'div'> & {direction?: 'column' | 'row'; wrap?: boolean}
+   props: ComponentProps
 ) => (
    <div
       className={cn(

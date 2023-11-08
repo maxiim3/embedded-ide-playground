@@ -1,5 +1,9 @@
+import {CodeContainer} from '@/app/code-container';
+import {CodeEditor} from '@/app/code-editor';
+import {CodePreview} from '@/app/code-preview';
 import {Heading1, Text} from '@/components/atoms/typography';
 import {FlexStack} from '@/components/layouts/stacks';
+import React from 'react';
 
 export default function Home() {
    return (
@@ -12,6 +16,12 @@ export default function Home() {
                sapiente voluptates.
             </Text>
          </FlexStack>
+         <CodeContainer>
+            {/*@ts-expect-error*/}
+            <CodeEditor />
+            {/*@ts-expect-error*/}
+            <CodePreview />
+         </CodeContainer>
       </main>
    );
 }
